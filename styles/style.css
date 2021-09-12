@@ -14,10 +14,20 @@ img {
     display: block;
 }
 
-/* ? Header is too big */
+li {
+    list-style: none;
+}
 
+input {
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* ? Header is too big */
 .tab-header {
-    position: fixed;
     width: 100%;
     height: 120px;
     background-color: var(--primary-blue);
@@ -34,11 +44,8 @@ img {
     margin-left: 15px;
 }
 
-/* TODO: Get rid of border when focus */
-
 .tab-name {
     height: 60px;
-    border: 0;
     background-color: var(--primary-blue);
     color: white;
     font-size: 48px;
@@ -62,6 +69,109 @@ img {
 
 .tab-filter {
     width: 100%;
-    border: 0;
     font-size: 36px;
+}
+
+/* TODO: Setup horizontal scroll */
+main {
+    margin-top: 60px;
+}
+
+.title-list {
+    display: flex;
+}
+
+.title {
+    height: 720px;
+    width: 480px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.title-header {
+    height: 120px;
+    background-color: var(--primary-green);
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-name-bg {
+    width: 100%;
+}
+
+.title-name {
+    background-color: var(--primary-green);
+    height: 120px;
+    width: 100%;
+    margin-left: 60px;
+    color: white;
+    font-size: 36px;
+}
+
+.title-name::placeholder {
+    color: white;
+}
+
+.option-icon {
+    margin-right: 30px;
+}
+
+.option-icon:hover {
+    cursor: pointer;
+}
+
+.title-subhead {
+    height: 60px;
+    background-color: var(--secondary-black);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-time-bg {
+    margin-left: 60px;
+}
+
+/* TODO: Setup default value with JS */
+.title-time {
+    height: 60px;
+    background-color: var(--secondary-black);
+    color: white;
+    font-size: 24px;
+}
+
+.title-plus {
+    margin-right: 60px;
+    font-size: 48px;
+    color: white;
+}
+
+.title-plus:hover {
+    cursor: pointer;
+}
+
+/* TODO: task-list inside scroll */
+.task-list {
+    height: 100%;
+    background-color: var(--secondary-gray);
+}
+
+/* ? box-shadow look weird */
+.menu-icon {
+    position: fixed;
+    bottom: 60px;
+    left: 60px;
+}
+
+.plus-icon {
+    position: fixed;
+    bottom: 60px;
+    right: 60px;
 }
