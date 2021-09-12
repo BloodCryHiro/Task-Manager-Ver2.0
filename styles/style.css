@@ -1,3 +1,10 @@
+:root {
+    --primary-blue: hsla(204, 42%, 27%, 1);
+    --primary-green: hsla(183, 31%, 34%, 1);
+    --secondary-gray: hsla(0, 0%, 85%, 1);
+    --secondary-black: hsla(0, 0%, 21%, 1);
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -7,9 +14,54 @@ img {
     display: block;
 }
 
+/* ? Header is too big */
+
 .tab-header {
     position: fixed;
+    width: 100%;
     height: 120px;
-    background: #284B63;
+    background-color: var(--primary-blue);
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+}
+
+.project-icon {
+    margin-left: 30px;
+}
+
+.tab-name-bg {
+    margin-left: 15px;
+}
+
+/* TODO: Get rid of border when focus */
+
+.tab-name {
+    height: 60px;
+    border: 0;
+    background-color: var(--primary-blue);
+    color: white;
+    font-size: 48px;
+}
+
+.tab-name::placeholder {
+    color: white;
+}
+
+.tab-filter-bg {
+    box-sizing: border-box;
+    height: 60px;
+    width: 360px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: 60px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.tab-filter {
+    width: 100%;
+    border: 0;
+    font-size: 36px;
 }
