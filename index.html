@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager Ver2.0</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header class="tab-header">
+            <img src="assets/file_blank_outline.svg" alt="project icon" class="project-icon">
+            <div class="tab-name-bg">
+                <input type="text" class="tab-name" placeholder="Tab Name">
+            </div>
+            <div class="tab-filter-bg">
+                <img src="assets/filter.svg" alt="filter icon" class="filter-icon">
+                <input type="text" class="tab-filter" placeholder="Filter">
+            </div>
+        </header>
+        <main>
+            <ul class="title-list">
+                <!-- Title -->
+                <li class="title">
+                    <header class="title-header">
+                        <div class="title-name-bg">
+                            <input type="text" class="title-name" placeholder="Title Name">
+                        </div>
+                        <img src="assets/more_horizontal.svg" alt="option icon" class="option-icon">
+                    </header>
+                    <section class="title-subhead">
+                        <div class="title-time-bg">
+                            <input type="date" class="title-time">
+                        </div>
+                        <div class="title-plus">+</div>
+                    </section>
+                    <ul class="task-list">
+                        <!-- Task Unfold -->
+                        <li class="task task-unfold">
+                            <div class="task-name-bg">
+                                <input type="text" class="task-name" placeholder="Task Name">
+                            </div>
+                            <div class="task-time-bg">
+                                <input type="date" class="task-time">
+                            </div>
+                            <ul class="task-type-list">
+                                <li class="task-type">Type</li>
+                                <li class="task-type">Type</li>
+                                <li class="task-type">Type</li>
+                            </ul>
+                            <div class="task-description-bg">
+                                <input type="text" class="task-description">
+                            </div>
+                            <div class="task-started-bg">
+                                <img src="" alt="" class="started-icon">
+                                Started
+                            </div>
+                            <div class="task-completed-bg">
+                                <img src="" alt="" class="completed-icon">
+                                Completed
+                            </div>
+                        </li>
+                        <!-- Task Fold -->
+                        <li class="task task-fold">
+                            <div class="task-name-bg">
+                                <input type="text" class="task-name" placeholder="Task Name">
+                            </div>
+                            <div class="task-time-bg">
+                                <input type="date" class="task-time">
+                            </div>
+                            <div class="task-started-bg">
+                                <img src="" alt="" class="started-icon">
+                                Started
+                            </div>
+                            <div class="task-completed-bg">
+                                <img src="" alt="" class="completed-icon">
+                                Completed
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="menu-icon-bg">
+                <img src="assets/hamburger.svg" alt="menu-icon" class="menu-icon">
+            </div>
+            <div class="plus-icon-bg">+</div>
+        </main>
+    </div>
+</body>
+</html>

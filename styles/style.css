@@ -1,0 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    display: block;
+}
+
+.tab-header {
+    position: fixed;
+    height: 120px;
+    background: #284B63;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+}
