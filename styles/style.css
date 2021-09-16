@@ -10,6 +10,11 @@
     margin: 0;
 }
 
+html, body {
+    height: 100%;
+    overflow-y: hidden;
+}
+
 img {
     display: block;
 }
@@ -72,12 +77,18 @@ input:focus {
     font-size: 36px;
 }
 
+/* Title Section */
+/* ? Title card is too big */
 /* TODO: Setup horizontal scroll */
 main {
-    margin-top: 60px;
+    height: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 .title-list {
+    margin-left: 60px;
+    margin-top: 60px;
     display: flex;
 }
 
@@ -148,7 +159,7 @@ main {
 }
 
 .title-plus {
-    margin-right: 60px;
+    margin-right: 40px;
     font-size: 48px;
     color: white;
 }
@@ -157,13 +168,169 @@ main {
     cursor: pointer;
 }
 
-/* TODO: task-list inside scroll */
+/* Task Section */
 .task-list {
     height: 100%;
     background-color: var(--secondary-gray);
+
+    overflow-y: scroll;
 }
 
-/* ? box-shadow look weird */
+.task-list::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+.task {
+    width: 420px;
+    box-sizing: border-box;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 30px auto;
+    overflow: hidden;
+    background-color: white;
+    position: relative;
+}
+
+.task-name {
+    height: 40px;
+    width: 100%;
+    font-size: 36px;
+}
+
+.task-time {
+    font-size: 18px;
+}
+
+.task-type-list {
+    align-self: center;
+    display: flex;
+    gap: 30px;
+}
+
+.task-type {
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: var(--secondary-gray);
+    font-size: 27px;
+    text-align: center;
+}
+
+.task-description {
+    height: 100%;
+    width: 100%;
+    resize: none;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 2px solid #E5E5E5;
+    border-radius: 5px;
+}
+
+.task-description:focus {
+    outline: none;
+    border: 2px solid #E5E5E5;
+    border-radius: 5px;
+}
+
+.task-started-bg, .task-completed-bg {
+    align-self: end;
+
+    display: flex;
+    align-items: center;
+}
+
+.task-started-bg:hover, .task-completed-bg:hover {
+    cursor: pointer;
+}
+
+.task-started-bg > p, .task-completed-bg > p {
+    font-size: 27px;
+}
+
+.task-unfold {
+    height: 390px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 40px 20px 90px 120px 60px;
+    grid-template-areas: 
+        "name name"
+        "time time"
+        "type type"
+        "description description"
+        "started completed";
+}
+
+.task-cross {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.task-cross:hover {
+    cursor: pointer;
+}
+
+.task-unfold > .task-name-bg {
+    grid-area: name;
+}
+
+.task-unfold > .task-time-bg {
+    grid-area: time;
+}
+
+.task-unfold > .task-type-list {
+    grid-area: type;
+}
+
+.task-unfold > .task-description-bg {
+    grid-area: description;
+}
+
+.task-unfold > .task-started-bg {
+    grid-area: started;
+}
+
+.task-unfold > .task-completed-bg {
+    grid-area: completed;
+}
+
+.task-fold {
+    height: 120px;
+
+    display: grid;
+    grid-template-columns: 1fr 60px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "name started"
+    "time completed";
+    align-items: center;
+}
+
+.task-fold > .task-name-bg {
+    grid-area: name;
+    align-self: center;
+}
+
+.task-fold > .task-time-bg {
+    grid-area: time;
+    align-self: center;
+}
+
+.task-fold > .task-started-bg {
+    grid-area: started;
+    justify-self: end;
+    align-self: center;
+}
+
+.task-fold > .task-completed-bg {
+    grid-area: completed;
+    justify-self: end;
+    align-self: center;
+}
+
+/* TODO: Redo icons with pure css */
 .menu-icon {
     position: fixed;
     bottom: 60px;
